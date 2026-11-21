@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pago · Encanto Colibrí</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<header class="nav"><div class="nav-in"><a class="logo" href="index.html"><svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#0f9d8a"/><path d="M8 20c4-1 6-4 8-8 1 3 3 5 8 6-3 1-4 3-6 5-2-2-5-3-10-3z" fill="#fff"/><circle cx="21" cy="11" r="1.6" fill="#fff"/></svg><span>Encanto Colibrí</span></a><nav><a href="index.html">Catálogo</a><a href="carrito.html">Carrito <span class="badge" data-contador hidden>0</span></a></nav></div></header>
+<main class="contenedor">
+  <h1 class="titulo">Pago</h1>
+  <ol class="pasos"><li id="ind1" class="activo">1. Envío</li><li id="ind2">2. Pago simulado</li></ol>
+  <div class="dos-col">
+    <div>
+      <section id="paso1">
+        <form id="form-envio" novalidate>
+          <h2>Envío</h2>
+          <label class="campo">Nombre ficticio
+            <input id="nombre" type="text" required placeholder="Ej.: Ana Ejemplo" autocomplete="off">
+            <small>Usa un nombre inventado. No se guarda ni se envía a ninguna parte.</small>
+          </label>
+          <label class="campo">País
+            <select id="pais" required><option value="">Selecciona un país</option></select>
+          </label>
+          <fieldset class="campo"><legend>Servicio de envío</legend>
+            <label class="opcion"><input type="radio" name="servicio" value="Estándar" checked><span id="precio-Estándar"></span></label>
+            <label class="opcion"><input type="radio" name="servicio" value="Express"><span id="precio-Express"></span></label>
+            <small>Envío nacional estándar gratis desde $ 150.000 en productos.</small>
+          </fieldset>
+          <button type="submit" class="btn ancho">Continuar al pago</button>
+        </form>
+      </section>
+      <section id="paso2" hidden>
+        <form id="form-pago">
+          <h2>Pago simulado</h2>
+          <p class="nota" id="envio-elegido"></p>
+          <fieldset class="campo"><legend>Medio de pago</legend>
+            <label class="opcion"><input type="radio" name="pago" value="Tarjeta de crédito" checked><span>Tarjeta de crédito</span></label>
+            <label class="opcion"><input type="radio" name="pago" value="PSE"><span>PSE</span></label>
+            <label class="opcion"><input type="radio" name="pago" value="Nequi"><span>Nequi</span></label>
+            <label class="opcion"><input type="radio" name="pago" value="PayPal"><span>PayPal</span></label>
+            <small>No se piden ni se guardan datos de tarjeta ni de cuentas.</small>
+          </fieldset>
+          <button type="submit" class="btn ancho">Pagar (simulado)</button>
+          <button type="button" class="enlace centro-btn" id="volver">Volver al envío</button>
+        </form>
+      </section>
+    </div>
+    <aside class="resumen" id="resumen"></aside>
+  </div>
+</main>
+<footer class="pie"><p>Sitio académico de simulación: no procesa pagos ni guarda datos personales. Usa Google Analytics 4 para medir la navegación con fines didácticos.</p></footer>
+<script src="js/config.js"></script>
+<script src="js/productos.js"></script>
+<script src="js/carrito.js"></script>
+<script src="js/monitor.js"></script>
+<script src="js/analytics.js"></script>
+<script src="js/checkout.js"></script></body></html>
